@@ -2,7 +2,8 @@ from django.shortcuts import render
 import requests
 
 def postWeather(request,city):
-    url = f"https://api.weatherapi.com/v1/current.json?q={city}&key=2a95f5c175c24996b0785650241005"
+    api = "enter your api key"
+    url = f"https://api.weatherapi.com/v1/current.json?q={city}&key={api}"
     response = requests.get(url)
     data = response.json()
     
