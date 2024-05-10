@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .weather-container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .weather-icon {
+            width: 100px;
+            height: 100px;
+        }
+        .back-button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        {% if location %}
+        <h2>Weather Information for {{ location }}</h2>
+        {% endif %}
+        {% if temp_c %}
+        <p>Temperature: {{ temp_c }}°C</p>
+        {% endif %}
+        {% if condition_text %}
+        <p>Condition: {{ condition_text }}</p>
+        {% endif %}
+        {% if icon_url %}
+        <img src="{{ icon_url }}" alt="Weather Icon" class="weather-icon">
+        {% endif %}
+        <br>
+        <a href="#" class="back-button" onclick="history.back()">Back</a>
+    </div>
+</body>
+</html>

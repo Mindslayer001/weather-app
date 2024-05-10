@@ -1,0 +1,1 @@
+weather API : https://api.weatherapi.com/v1/current.json?q={CITY NAME}&key={APIKEY}
